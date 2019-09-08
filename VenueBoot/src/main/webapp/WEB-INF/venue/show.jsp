@@ -9,32 +9,40 @@
 	crossorigin="anonymous">
 
 <meta charset="UTF-8">
-<title>Venue Information</title>
+<title><strong>Venue Information</strong></title>
 </head>
 <body>
-<div class="container-fluid">
-	<div>
-		<h2>${venue.name}</h2>
+	<div class="container-fluid">
+		<div>
+			<h1 style="color: blue;">${venue.name}</h1>
 
-		<p>Address: ${venue.address} ${venue.city} ${venue.state} ${venue.zip}</p.>
-		<p>Type: ${venue.environment}</p>
-		<p>Seating Capacity: ${venue.capacity}</p>
-		<p>Description: ${venue.description}</p>
-	</div>
-	<br>
-	<form action="editLink.do" method="GET">
-		<input type="submit" class="btn btn-success btn-lg" value="Update">
-		<br> <input type="hidden" name="id" value="${venue.id}" />
-	</form>
-	<br>
-	<form action="delete.do" method="POST">
-		<input type="submit" class="btn btn-danger btn-lg" value="Delete"> <br>
-		<input type="hidden" name="id" value="${venue.id}" />
-	</form>
-	<br>
-	<form action="home.do" method="GET">
-		<input type="submit" class="btn btn-primary btn-lg" value="Home">
-	</form>
+			<p>
+				<strong>Venue ID# </strong>${venue.id}</p>
+			<p>
+				<strong>Address: </strong>${venue.address} ${venue.city}
+				${venue.state} ${venue.zip}
+				</p.>
+			<p>
+				<strong>Type: </strong>${venue.environment}</p>
+			<p>
+				<strong>Seating Capacity: </strong>${venue.capacity}</p>
+			<p>
+				<strong>Description: </strong>${venue.description}</p>
+		</div>
+		<br>
+		<form action="editLink.do" method="GET">
+			<input type="submit" class="btn btn-success btn-lg" value="Edit">
+			<br> <input type="hidden" name="id" value="${venue.id}" />
+		</form>
+		<br>
+		<form action="delete.do" method="POST">
+			<input type="submit" class="btn btn-danger btn-lg" value="Delete">
+			<br> <input type="hidden" name="id" value="${venue.id}" />
+		</form>
+		<br>
+		<form action="home.do" method="GET">
+			<input type="submit" class="btn btn-primary btn-lg" value="Home">
+		</form>
 	</div>
 </body>
 </html>

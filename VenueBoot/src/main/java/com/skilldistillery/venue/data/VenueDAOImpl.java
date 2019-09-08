@@ -30,7 +30,7 @@ public class VenueDAOImpl implements VenueDAO {
 
 	@Override
 	public Venue update(int id, Venue venue) {
-		Venue update =em.find(Venue.class, id);
+		Venue update = em.find(Venue.class, id);
 		update.setName(venue.getName());
 		update.setAddress(venue.getAddress());
 		update.setCity(venue.getCity());
@@ -59,7 +59,5 @@ public class VenueDAOImpl implements VenueDAO {
 		List<Venue> all = em.createQuery(qry, Venue.class).getResultList();
 		return all;
 	}
-
-	
 
 }

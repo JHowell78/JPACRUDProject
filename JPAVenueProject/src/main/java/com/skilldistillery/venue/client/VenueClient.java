@@ -13,9 +13,11 @@ public class VenueClient {
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("VenuePU");
 		EntityManager em = emf.createEntityManager();
-		Venue venue = em.find(Venue.class, 6);
-	
-		System.out.println(venue);
+//		Venue venue = em.find(Venue.class, 6);
+//	
+//		System.out.println(venue);
+		Venue venue = new Venue();
+		
 		em.close();
 	}
 

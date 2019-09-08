@@ -28,7 +28,7 @@ public class VenueController {
 		model.addAttribute("allVenues", allVenues);
 		return "index";
 	}
-
+	
 	@RequestMapping(path = "showAll.do", method = RequestMethod.GET)
 	public String showAll(Model model) {
 		List<Venue> allVenues = dao.findAll();

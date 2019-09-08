@@ -15,21 +15,21 @@
 <body>
 	<div class="container-fluid">
 		<div class="p-3 mb-2 bg-light text-dark">
-
 			<h1>
 				<strong><p style="text-align: center;">Entertainment
 						Venue Information</p>
 			</h1>
 			<form action="showAll.do" method="GET">
 				<c:forEach items="${allVenues }" var="venue">
-
 					<p>
 						<a href="getVenue.do?id=${venue.id}">${venue.name} </a>
 					</p>
-
 				</c:forEach>
 			</form>
-			</div>
-			</div>
+			<form action="home.do" method="GET">
+				<input type="submit" class="btn btn-primary btn-lg" value="Home">
+			</form>
+		</div>
+	</div>
 </body>
 </html>

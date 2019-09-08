@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,27 +12,26 @@
 	crossorigin="anonymous">
 
 <meta charset="UTF-8">
-<title>Entertainment Venue Info center</title>
 </head>
 <body>
-<div class="container-fluid">
-<div class="p-3 mb-2 bg-light">
+	<jsp:include page="navbar.jsp" />
+	<title>Entertainment Venue Info center</title>
 
- 	<h1><strong><p style="text-align: center;">Entertainment Venue Information</p></h1>
-	<form action="getVenue.do" method="GET">
-		<c:forEach items="${allVenues }" var="venue">
-				<p><a href="getVenue.do?id=${venue.id}">${venue.name} </a></p>
-		</c:forEach>
-	</form>
-	<form action="getVenue.do" method="GET">
-				<input type="submit" class="btn btn-warning" value="Search Venue ID">
-		<input required type="number" name="id" /> 
-	</form>
-	<br>
-	<form action="addVenueFormLink.do" method="GET">
-	<input type="submit" class="btn btn-success" value="Add Venue">
-	</form>
-	</div>
+	<div class="container-fluid">
+		<div class="p-3 mb-2 bg-light">
+			<img src="WEB-INF/venue/um.jpg"> <br>
+			<form action="getVenue.do" method="GET">
+					<br>
+					<br>
+				<c:forEach items="${allVenues }" var="venue">
+					<p>
+						<a href="getVenue.do?id=${venue.id}">ID: ${venue.id} ${venue.name} </a>
+					</p>
+				</c:forEach>
+			</form>
+
+		</div>
 	</div>
 </body>
+
 </html>

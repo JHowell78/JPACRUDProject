@@ -10,6 +10,5 @@ public interface VenueDAO {
 	public Venue update(int id, Venue venue);
 	public boolean destroy(int id);
 	public List<Venue> findAll();
-		
 	
 }

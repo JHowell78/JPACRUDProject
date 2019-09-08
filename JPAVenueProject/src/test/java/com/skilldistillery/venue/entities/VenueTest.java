@@ -15,9 +15,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class VenueTest {
-private static EntityManagerFactory emf;
-private EntityManager em;
-private Venue venue;
+	private static EntityManagerFactory emf;
+	private EntityManager em;
+	private Venue venue;
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("VenuePU");
@@ -33,7 +34,6 @@ private Venue venue;
 		em = emf.createEntityManager();
 		venue = em.find(Venue.class, 1);
 	}
-	
 
 	@AfterEach
 	void tearDown() throws Exception {
@@ -54,7 +54,7 @@ private Venue venue;
 		assertEquals(
 				"Situated in the heart of Morrison, Colorado the Red Rocks Amphitheatre is a great place to see some of the biggest and best in the music industry. With a uniquely located stage surrounded by incredible red rocks that tower above the seating areas and views of the sky and surrounding areas makes it simply breathtaking!",
 				venue.getDescription());
-		
+
 	}
 
 }
