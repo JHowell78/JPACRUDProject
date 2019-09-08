@@ -29,9 +29,19 @@ public class VenueController {
 		return "index";
 	}
 
+	@RequestMapping(path = "showAll.do", method = RequestMethod.GET)
+	public String showAll(Model model) {
+		List<Venue> allVenues = dao.findAll();
+		model.addAttribute("allVenues", allVenues);
+		return "venue/showAll";
+	}
+
 	@RequestMapping(path = "getVenue.do")
 	public String getVenue(@RequestParam("id") Integer id, Model model) {
 		Venue venue = dao.findById(id);
+		if (venue == null) {
+			return "venue/notFound";
+		}
 		model.addAttribute("venue", venue);
 		return "venue/show";
 	}
@@ -60,7 +70,7 @@ public class VenueController {
 		model.addAttribute("newVenue", newVenue);
 		return "venue/show";
 	}
-	
+
 	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
 	public String delete(@RequestParam("id") Integer id, Model model) {
 		boolean deleteVenue = dao.destroy(id);
@@ -68,8 +78,8 @@ public class VenueController {
 			List<Venue> allVenues = dao.findAll();
 			model.addAttribute("allVenues", allVenues);
 			return "index";
-		}else {
-			return "error";
+		} else {
+			return "venu/error";
 		}
 	}
 

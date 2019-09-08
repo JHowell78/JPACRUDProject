@@ -4,6 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 <title>Error</title>
 <meta charset="UTF-8">
 </head>
@@ -11,11 +15,10 @@
 </head>
 <body>
 	<h1 style="color: red;">Unable to Remove Venue</h1>
-		<br>
-		<br>
-	
+	<br>
+	<br>
 	<form action="home.do" method="GET">
-		<button type="submit">Home</button>
-		</form>
+		<input type="submit" class="btn btn-primary btn-lg" value="Home">
+	</form>
 </body>
 </html>

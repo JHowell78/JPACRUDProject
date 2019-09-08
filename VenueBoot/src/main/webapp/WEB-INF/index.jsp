@@ -4,29 +4,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
 <meta charset="UTF-8">
 <title>Entertainment Venue Info center</title>
 </head>
 <body>
-<h2>Entertainment Venue Infocenter</h2>
+<div class="container-fluid">
+<div class="p-3 mb-2 bg-light">
 
+ 	<h1><strong><p style="text-align: center;">Entertainment Venue Information</p></h1>
 	<form action="getVenue.do" method="GET">
 		<c:forEach items="${allVenues }" var="venue">
-			<ul>
-				<li><a href="getVenue.do?id=${venue.id}">${venue.name} </a></li>
-			</ul>
+				<p><a href="getVenue.do?id=${venue.id}">${venue.name} </a></p>
 		</c:forEach>
 	</form>
-	Select a Venue By Id Number:
 	<form action="getVenue.do" method="GET">
-		<input type="number" name="id" /> <input type="submit"
-			value="Show Venue" />
+				<input type="submit" class="btn btn-warning" value="Search Venue ID">
+		<input required type="number" name="id" /> 
 	</form>
 	<br>
-	Add a New Venue:
 	<form action="addVenueFormLink.do" method="GET">
-		<button type="submit">Add Venue</button>
-		<br>
+	<input type="submit" class="btn btn-success" value="Add Venue">
 	</form>
+	</div>
+	</div>
 </body>
 </html>
