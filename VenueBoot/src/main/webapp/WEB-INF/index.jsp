@@ -25,7 +25,7 @@
 					<br>
 				<c:forEach items="${allVenues }" var="venue">
 					<p>
-						<a href="getVenue.do?id=${venue.id}">ID: ${venue.id} ${venue.name} </a>
+						<a href="getVenue.do?id=${venue.id}">${venue.name} </a>
 					</p>
 				</c:forEach>
 			</form>
